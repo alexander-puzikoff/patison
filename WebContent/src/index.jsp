@@ -7,6 +7,8 @@
 <title>Онлайн обнаружение образований</title>
 </head>
 <body>
+		<jsp:include page="/src/head.jsp"/>
+		<jsp:include page="/src/foot.jsp"/>
 
 
 </body>
