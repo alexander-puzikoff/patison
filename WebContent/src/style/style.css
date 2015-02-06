@@ -1,1 +1,24 @@
-@CHARSET "UTF-8";
+@font-face{
+	font-family: siteName;
+	src: url(/Web_flur_project/src/style/fonts/Insta.otf);
+}
+
+
+.header {
+	background-color: #E0EEEE;
+	top:0;
+	height: 25%;
+	font: 20px siteName;
+}
+
+
+.footer {
+	background-color: ivory;
+	width: 100%;
+	height: 33 px;
+	text-align:center;
+	position: absolute;
+	bottom: 10px;
+/* //	left: 50%; */
+	font: bold 12px Georgia;
+}
