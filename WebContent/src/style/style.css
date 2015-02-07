@@ -7,7 +7,10 @@
 .header {
 	background-color: #E0EEEE;
 	top:0;
-	height: 25%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100 %;
+	height: 105 PX;
 	font: 20px siteName;
 }
 
