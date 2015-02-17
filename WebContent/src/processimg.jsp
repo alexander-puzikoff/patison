@@ -4,32 +4,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Работа с изображением</title>
 <style type="text/css">
 <!--
 @import url(/Web_flur_project/src/style/style.css);
 -->
 </style>
-<meta charset="utf-8">
-<title>Онлайн обнаружение образований</title>
 </head>
-
 <body>
-
 	<div class="header">
 		<jsp:include page="/src/head.jsp" /></div>
 	<fieldset>
 		<legend>Работа с изображение</legend>
 
-		<br>Выберите снимок для обработки
-		<form method='post' action='/Web_flur_project/ImageProcessor' enctype='multipart/form-data'>
-			<input type='file' name='fileToUpload' id='fileToUpload' /> <br>
-			<input type='submit' value='Загрузить изображение' name='submit' />
-		</form>
+
 	</fieldset>
 
 
 	<div class="footer">
 		<jsp:include page="/src/foot.jsp" />
 	</div>
+
 </body>
 </html>
