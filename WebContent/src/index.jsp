@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 <!--
-@import url(/Web_flur_project/src/style/style.css);
+@import url(/X-rayIRSystem/src/style/style.css);
 -->
 </style>
 <meta charset="utf-8">
@@ -21,12 +21,13 @@
 		<legend>Работа с изображение</legend>
 
 		<br>Выберите снимок для обработки
-		<form method='post' action='/Web_flur_project/ImageProcessor' enctype='multipart/form-data'>
+		<form method='post' action='/X-rayIRSystem/ImageProcessor' enctype='multipart/form-data'>
 			<input type='file' name='fileToUpload' id='fileToUpload' /> <br>
 			<input type='submit' value='Загрузить изображение' name='submit' />
 		</form>
 	</fieldset>
-
+	<p>или выберите из <a href='/X-rayIRSystem/src/chooseimg.jsp'>уже существующих</a>.</p>
+	
 
 	<div class="footer">
 		<jsp:include page="/src/foot.jsp" />

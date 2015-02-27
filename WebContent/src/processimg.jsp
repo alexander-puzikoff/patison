@@ -7,7 +7,7 @@
 <title>Работа с изображением</title>
 <style type="text/css">
 <!--
-@import url(/Web_flur_project/src/style/style.css);
+@import url(/X-rayIRSystem/src/style/style.css);
 -->
 </style>
 </head>

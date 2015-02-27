@@ -8,7 +8,7 @@
 
 <style type="text/css">
 <!--
-@import url(/Web_flur_project/src/style/style.css);
+@import url(/X-rayIRSystem/src/style/style.css);
 -->
 </style>
 </head>
@@ -17,8 +17,7 @@
 		<jsp:include page="/src/head.jsp" /></div>
 	<fieldset>
 		<legend>Работа с изображение</legend>
-
-
+		<jsp:include page='/GetAllImages' />
 	</fieldset>
 
 

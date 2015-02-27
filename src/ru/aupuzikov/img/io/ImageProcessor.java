@@ -1,16 +1,18 @@
-package puzikov.img.io;
+package ru.aupuzikov.img.io;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.Buffer;
+import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -57,10 +59,11 @@ public class ImageProcessor extends HttpServlet {
 		// BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		File f = new File(appPath + "\\img\\" + fileName);
 		// f.mkdirs();
-		f.createNewFile();
 		PrintWriter pw;
 		response.setContentType("text/html; charset=UTF-8");
 		pw = response.getWriter();
+		pw.println("Создаём файл для данных " + f.getCanonicalPath());
+		f.createNewFile();
 		if (!f.canWrite()) {
 			pw.println("нельзя сохранить файл по адресу <br>");
 			response.getWriter().println(f.getAbsolutePath());
@@ -75,10 +78,23 @@ public class ImageProcessor extends HttpServlet {
 			fw.flush();
 			fw.close();
 		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/src/process.jsp");
 
-		pw.println("Файл сохранен по адресу" + f.getPath());
+		RequestDispatcher rd = request
+				.getRequestDispatcher("/src/processimg.jsp");
+		Properties prop = new Properties();
+		String filePropPath = "propt.path";
+		File fProp = new File(f.getParent() + "/" + filePropPath);
+		if (fProp.exists()) {
+			FileReader fr = new FileReader(fProp);
+			prop.load(fr);
+			fr.close();
+		}
+		FileWriter fw = new FileWriter(fProp);
+		// prop.setProperty(String.valueOf(f.hashCode()), f.getPath());
+		prop.put(String.valueOf(f.hashCode()), f.getPath());
+		prop.store(fw, "list of files");
+		pw.println("Файл сохранен по адресу " + f.getPath());
+		pw.println("prop по адресу " + fProp.getAbsolutePath());
 		rd.forward(request, response);
 		// br.close();
 		is.close();
